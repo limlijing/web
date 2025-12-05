@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECPH - Learning Resources</title>
+    <style>
+        /* 使用你之前写的简洁样式 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #1f1c2c, #928dab);
+            color: white;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 700px;
+        }
+        
+        h1 {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px 40px;
+            border-radius: 10px;
+            margin: 0 0 20px 0;
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        button {
+            display: block;
+            padding: 18px 40px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: white;
+            color: #1f1c2c;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 300px;
+            font-weight: 600;
+        }
+        
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to SECPH</h1>
+        <p>Access all PDF materials for SECPH courses</p>
+        <div class="button-container">
+            <button onclick="location.href='sem1.html'">Semester 1 Courses</button>
+            <button onclick="location.href='sem2.html'">Semester 2 (Coming Soon)</button>
+        </div>
+    </div>
+</body>
+</html>
