@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECPH Semester 1 - Study Materials</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #ffffff, #e6e6e6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .subject-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 1);
+        }
+        
+        .subject-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+
+        .tech-info .subject-icon { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .programming .subject-icon { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .discrete-math .subject-icon { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .digital-logic .subject-icon { background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); }
+        
+        .subject-content {
+            flex: 1;
+        }
+        
+        .subject-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        
+        .subject-content p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            margin-top: 20px;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subject-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .subject-card {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subject-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .subject-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📚 SECPH Semester 1</h1>
+            <p>Access comprehensive learning materials for your first semester courses. Click on any subject to explore study resources.</p>
+        </header>
+        
+        <main class="subject-grid">
+            <div class="subject-card tech-info">
+                <div class="subject-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="subject-content">
+                    <h3>Technology and Information Systems</h3>
+                    <p>Explore fundamental concepts of information technology, computer systems, and their applications in modern computing.</p>
+                    <a href="SECP1513.html" class="btn">
+                        <i class="fas fa-book-open"></i> Study Materials
+                    </a>
+                </div>
+            </div>
+            
+            <div class="subject-card programming">
+                <div class="subject-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="subject-content">
+                    <h3>Programming Fundamentals</h3>
+                    <p>Learn the basics of programming, algorithms, and problem-solving techniques using modern programming languages.</p>
+                    <a href="SECJ1013.html" class="btn">
+                        <i class="fas fa-laptop-code"></i> Study Materials
+                    </a>
+                </div>
+            </div>
+            
+            <div class="subject-card discrete-math">
+                <div class="subject-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <div class="subject-content">
+                    <h3>Discrete Mathematics</h3>
+                    <p>Master mathematical concepts essential for computer science including logic, sets, relations, and graph theory.</p>
+                    <a href="SECI1013.html" class="btn">
+                        <i class="fas fa-chart-bar"></i> Study Materials
+                    </a>
+                </div>
+            </div>
+            
+            <div class="subject-card digital-logic">
+                <div class="subject-icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <div class="subject-content">
+                    <h3>Digital Logic Design</h3>
+                    <p>Understand digital circuits, logic gates, and the fundamental building blocks of computer hardware systems.</p>
+                    <a href="SECR1013.html" class="btn">
+                        <i class="fas fa-project-diagram"></i> Study Materials
+                    </a>
+                </div>
+            </div>
+        </main>
+        
+        <div style="text-align: center;">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Main Page
+            </a>
+        </div>
+        
+        <footer class="footer">
+            <p>© 2025 SECPH Study Materials | LIM LI JING</p>
+        </footer>
+    </div>
+</body>
+</html>
